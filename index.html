@@ -1,2 +1,576 @@
-# Yearly
-Arewatv 2025
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yearly Subscription Code</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    .container {
+      max-width: 500px;
+      width: 100%;
+    }
+    
+    .card {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+      padding: 30px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(to right, #ffd700, #ff8c00, #ff4500);
+    }
+    
+    .header {
+      margin-bottom: 25px;
+      position: relative;
+    }
+    
+    .icon-container {
+      background: linear-gradient(135deg, #ffd700, #ff8c00);
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto 20px;
+      box-shadow: 0 8px 20px rgba(255, 140, 0, 0.4);
+      animation: pulse 2s infinite;
+    }
+    
+    .icon-container i {
+      font-size: 40px;
+      color: white;
+    }
+    
+    h2 {
+      color: #2c3e50;
+      font-size: 32px;
+      margin-bottom: 10px;
+      background: linear-gradient(to right, #ffd700, #ff8c00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .subtitle {
+      color: #7f8c8d;
+      font-size: 18px;
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
+    
+    .code-container {
+      position: relative;
+      margin: 30px 0;
+      perspective: 500px;
+    }
+    
+    .code-box {
+      font-size: 36px;
+      font-weight: bold;
+      background: linear-gradient(to right, #f5f7fa, #e4e7eb);
+      padding: 25px 20px;
+      border-radius: 15px;
+      letter-spacing: 6px;
+      box-shadow: inset 0 0 15px rgba(0,0,0,0.1), 0 5px 15px rgba(0,0,0,0.1);
+      color: #2c3e50;
+      border: 2px dashed #ff8c00;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.5s;
+    }
+    
+    .code-box:hover {
+      transform: rotateY(10deg);
+    }
+    
+    .code-label {
+      position: absolute;
+      top: -12px;
+      left: 25px;
+      background: white;
+      padding: 0 15px;
+      color: #ff8c00;
+      font-size: 16px;
+      font-weight: 600;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border-radius: 20px;
+    }
+    
+    .btn-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 30px 0;
+    }
+    
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: none;
+      padding: 14px 30px;
+      border-radius: 50px;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+      min-width: 200px;
+    }
+    
+    button:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    }
+    
+    .btn-primary {
+      background: linear-gradient(to right, #ff8c00, #ff4500);
+      color: white;
+    }
+    
+    .btn-primary:hover {
+      background: linear-gradient(to right, #e67e22, #d35400);
+    }
+    
+    .btn-primary i {
+      font-size: 20px;
+    }
+    
+    .timer {
+      margin: 30px 0;
+      padding: 20px;
+      background: linear-gradient(to right, #f8f9fa, #e9ecef);
+      border-radius: 15px;
+      font-size: 20px;
+      color: #e74c3c;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    .timer i {
+      font-size: 26px;
+      animation: shake 1.5s infinite;
+    }
+    
+    .support {
+      margin-top: 35px;
+      padding-top: 30px;
+      border-top: 1px solid #eee;
+      background: #f9f9f9;
+      border-radius: 15px;
+      padding: 25px;
+      box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+    }
+    
+    .support-title {
+      color: #e74c3c;
+      font-size: 24px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    
+    .support-text {
+      color: #7f8c8d;
+      font-size: 17px;
+      margin-bottom: 25px;
+      line-height: 1.7;
+    }
+    
+    .support-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    
+    .btn-whatsapp {
+      background: linear-gradient(to right, #25d366, #128c7e);
+      color: white;
+    }
+    
+    .btn-whatsapp:hover {
+      background: linear-gradient(to right, #1da851, #0d6e5d);
+    }
+    
+    .btn-email {
+      background: linear-gradient(to right, #ff5722, #e64a19);
+      color: white;
+    }
+    
+    .btn-email:hover {
+      background: linear-gradient(to right, #e64a19, #bf360c);
+    }
+    
+    .footer {
+      margin-top: 30px;
+      color: #7f8c8d;
+      font-size: 15px;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+    }
+    
+    .info-box {
+      background: #e3f2fd;
+      border-radius: 12px;
+      padding: 15px;
+      margin: 20px 0;
+      text-align: left;
+      font-size: 15px;
+      color: #1565c0;
+    }
+    
+    .info-box i {
+      margin-right: 10px;
+      font-size: 18px;
+    }
+    
+    .cooldown-box {
+      background: #ffecb3;
+      border-radius: 12px;
+      padding: 15px;
+      margin: 20px 0;
+      text-align: center;
+      font-size: 16px;
+      color: #7d6608;
+      font-weight: 600;
+    }
+    
+    .cooldown-timer {
+      margin-top: 10px;
+      font-size: 18px;
+      color: #e74c3c;
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+      20%, 40%, 60%, 80% { transform: translateX(5px); }
+    }
+    
+    @media (max-width: 480px) {
+      .card {
+        padding: 20px 15px;
+      }
+      
+      .btn-container, .support-buttons {
+        flex-direction: column;
+        gap: 15px;
+      }
+      
+      button {
+        width: 100%;
+        padding: 12px;
+      }
+      
+      .code-box {
+        font-size: 28px;
+        padding: 20px 15px;
+      }
+      
+      h2 {
+        font-size: 26px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="header">
+        <div class="icon-container">
+          <i class="fas fa-medal"></i>
+        </div>
+        <h2>Yearly Subscription Code</h2>
+        <p class="subtitle">Your exclusive annual access code for premium content. Code expires 30 minutes after copying.</p>
+      </div>
+      
+      <div class="code-container">
+        <div class="code-label">
+          <i class="fas fa-calendar-star"></i> YEARLY CODE
+        </div>
+        <div id="codeBox" class="code-box">••••••</div>
+      </div>
+      
+      <div class="info-box">
+        <i class="fas fa-info-circle"></i> 
+        Your code will expire 30 minutes after copying. You can only see a new code after 365 days.
+      </div>
+      
+      <div class="btn-container">
+        <button class="btn-primary" id="copyButton">
+          <i class="fas fa-copy"></i> Copy Code
+        </button>
+      </div>
+      
+      <div id="timer" class="timer">
+        <i class="fas fa-clock"></i>
+        <span id="timerText">Ready to copy your yearly code</span>
+      </div>
+      
+      <div id="cooldownSection" class="cooldown-box" style="display: none;">
+        <i class="fas fa-hourglass-half"></i> 
+        <span id="cooldownMessage">You can get a new code in:</span>
+        <div class="cooldown-timer" id="cooldownTimer">365d 0h 0m 0s</div>
+      </div>
+      
+      <div id="supportSection" class="support">
+        <h3 class="support-title">
+          <i class="fas fa-life-ring"></i> Need Assistance?
+        </h3>
+        <p class="support-text">If your code has expired or you're having trouble, our support team is available 24/7 to help you.</p>
+        
+        <div class="support-buttons">
+          <button class="btn-whatsapp" onclick="window.open('https://wa.me/1234567890','_blank')">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+          </button>
+          
+          <button class="btn-email" onclick="window.location.href='mailto:support@example.com'">
+            <i class="fas fa-envelope"></i> Email
+          </button>
+        </div>
+      </div>
+      
+      <div class="footer">
+        <p><i class="fas fa-shield-alt"></i> Your data is securely stored locally. Code cooldown: 365 days.</p>
+        <p>© 2023 Premium Services. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Current yearly code - would be updated yearly in a real system
+    const currentYearlyCode = "928584";
+    const codeBox = document.getElementById("codeBox");
+    const timerText = document.getElementById("timerText");
+    const timer = document.getElementById("timer");
+    const supportSection = document.getElementById("supportSection");
+    const copyButton = document.getElementById("copyButton");
+    const cooldownSection = document.getElementById("cooldownSection");
+    const cooldownMessage = document.getElementById("cooldownMessage");
+    const cooldownTimer = document.getElementById("cooldownTimer");
+    
+    // Time constants
+    const THIRTY_MINUTES = 30 * 60 * 1000; // 30 minutes in ms
+    const THREE_HUNDRED_SIXTY_FIVE_DAYS = 365 * 24 * 60 * 60 * 1000; // 365 days in ms
+    
+    // Initial state
+    supportSection.style.display = "none";
+    cooldownSection.style.display = "none";
+    timer.style.background = "linear-gradient(to right, #f8f9fa, #e9ecef)";
+    timer.style.color = "#ff8c00";
+    
+    // Check for existing subscription data
+    const savedData = JSON.parse(localStorage.getItem("subscriptionData"));
+    const now = new Date().getTime();
+    
+    if (savedData) {
+      const timeSinceCopy = now - savedData.copyTime;
+      const timeSinceLastCode = now - savedData.lastCodeTime;
+      
+      if (timeSinceCopy < THIRTY_MINUTES) {
+        // Code is still valid
+        codeBox.textContent = savedData.code;
+        startTimer(THIRTY_MINUTES - timeSinceCopy);
+      } else if (timeSinceLastCode < THREE_HUNDRED_SIXTY_FIVE_DAYS) {
+        // Code expired but still in cooldown period
+        codeBox.textContent = savedData.code;
+        codeBox.style.opacity = "0.6";
+        timerText.textContent = "Your code has expired!";
+        timer.style.background = "linear-gradient(to right, #ffcdd2, #ef9a9a)";
+        supportSection.style.display = "block";
+        startCooldownTimer(THREE_HUNDRED_SIXTY_FIVE_DAYS - timeSinceLastCode);
+      } else {
+        // Cooldown period over
+        localStorage.removeItem("subscriptionData");
+      }
+    }
+    
+    // Copy button event listener
+    copyButton.addEventListener("click", copyCode);
+    
+    function copyCode() {
+      const now = new Date().getTime();
+      const savedData = JSON.parse(localStorage.getItem("subscriptionData"));
+      
+      // Check if user is in cooldown period
+      if (savedData) {
+        const timeSinceLastCode = now - savedData.lastCodeTime;
+        if (timeSinceLastCode < THREE_HUNDRED_SIXTY_FIVE_DAYS) {
+          showNotification("You can only get a new code once per year!");
+          return;
+        }
+      }
+      
+      // Save to localStorage
+      localStorage.setItem("subscriptionData", JSON.stringify({ 
+        code: currentYearlyCode, 
+        copyTime: now,
+        lastCodeTime: now
+      }));
+      
+      // Update UI
+      codeBox.textContent = currentYearlyCode;
+      codeBox.style.opacity = "1";
+      codeBox.style.background = "linear-gradient(to right, #d4fc79, #96e6a1)";
+      
+      // Start the 30-minute countdown
+      startTimer(THIRTY_MINUTES);
+      
+      // Copy to clipboard
+      navigator.clipboard.writeText(currentYearlyCode).then(() => {
+        showNotification("Code copied! Valid for 30 minutes.");
+      });
+    }
+    
+    function startTimer(duration) {
+      let remaining = duration;
+      
+      // Update timer immediately
+      updateTimerText(remaining);
+      
+      // Change timer style
+      timer.style.background = "linear-gradient(to right, #fff9c4, #ffecb3)";
+      timer.style.color = "#e74c3c";
+      supportSection.style.display = "none";
+      cooldownSection.style.display = "none";
+      
+      // Start countdown
+      const interval = setInterval(() => {
+        remaining -= 1000;
+        
+        if (remaining <= 0) {
+          clearInterval(interval);
+          timerText.textContent = "Your code has expired!";
+          timer.style.background = "linear-gradient(to right, #ffcdd2, #ef9a9a)";
+          supportSection.style.display = "block";
+          startCooldownTimer(THREE_HUNDRED_SIXTY_FIVE_DAYS);
+        } else {
+          updateTimerText(remaining);
+        }
+      }, 1000);
+    }
+    
+    function updateTimerText(ms) {
+      const minutes = Math.floor(ms / 60000);
+      const seconds = Math.floor((ms % 60000) / 1000);
+      
+      timerText.innerHTML = `
+        Code expires in: 
+        <span style="font-size:1.2em;">${minutes}m ${seconds}s</span>
+      `;
+    }
+    
+    function startCooldownTimer(duration) {
+      let remaining = duration;
+      
+      // Update cooldown immediately
+      updateCooldownText(remaining);
+      cooldownSection.style.display = "block";
+      
+      // Start countdown
+      const interval = setInterval(() => {
+        remaining -= 1000;
+        
+        if (remaining <= 0) {
+          clearInterval(interval);
+          cooldownSection.style.display = "none";
+          localStorage.removeItem("subscriptionData");
+        } else {
+          updateCooldownText(remaining);
+        }
+      }, 1000);
+    }
+    
+    function updateCooldownText(ms) {
+      const days = Math.floor(ms / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((ms % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((ms % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((ms % (1000 * 60)) / 1000);
+      
+      cooldownTimer.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+    
+    function showNotification(message) {
+      const notification = document.createElement('div');
+      notification.textContent = message;
+      notification.style.cssText = `
+        position: fixed;
+        top: 30px;
+        right: 30px;
+        background: rgba(46, 204, 113, 0.95);
+        color: white;
+        padding: 20px 35px;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        z-index: 1000;
+        font-weight: 600;
+        font-size: 18px;
+        animation: slideIn 0.5s ease, fadeOut 1s ease 2.5s forwards;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      `;
+      
+      const icon = document.createElement('i');
+      icon.className = 'fas fa-check-circle';
+      notification.prepend(icon);
+      
+      document.body.appendChild(notification);
+      
+      setTimeout(() => {
+        notification.style.animation = 'fadeOut 0.5s ease forwards';
+        setTimeout(() => {
+          document.body.removeChild(notification);
+        }, 500);
+      }, 3000);
+    }
+    
+    // Add CSS for animations
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes slideIn {
+        from { transform: translateX(100px); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
+      }
+      @keyframes fadeOut {
+        to { opacity: 0; transform: translateY(-30px); }
+      }
+    `;
+    document.head.appendChild(style);
+  </script>
+</body>
+</html>
